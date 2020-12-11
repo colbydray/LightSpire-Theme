@@ -1,0 +1,308 @@
+PixmapDirectory        "/home/colbydray/.ctwmxpm/"
+
+NoGrabServer
+RestartPreviousState
+MenuFont         "-misc-fixed-bold-r-normal-*-*-140-*-*-c-*-iso8859-*"
+TitleFont        "-adobe-helvetica-bold-r-normal--12*"
+IconManagerFont  "-b&h-lucida-medium-r-normal-sans-12-120-75-75-p-71-iso8859-1"
+IconFont     "fixed"
+ResizeFont       "-adobe-helvetica-bold-r-normal--10*"
+WorkSpaceFont    "fixed"
+ShowWorkSpaceManager            # start with workspcace manager up
+#UseThreeDMenus
+UseThreeDTitles
+#NoTitleFocus
+NoTitleHighlight
+TitleJustification  "center"
+#UseThreeDIconManagers
+#UseThreeDWMap
+StayUpMenus
+
+DecorateTransients
+TransientOnTop 85
+
+OpaqueMove
+OpaqueResize
+
+BorderWidth 5
+BorderResizeCursors
+
+
+#---------------------------------------------------------
+# COLOR CONFIG and
+# COLORS                                          
+#---------------------------------------------------------
+
+#BeNiceToColorMap           # less col in shadows
+
+Color
+{
+  BorderColor           "#C6D1E3"    # optional windowlist
+  BorderTileBackground  "#C6D1E3"    # optional windowlist
+  DefaultBackground     "#4B699A"
+  DefaultForeground     "#C6D1E3"
+  IconBackground        "#C6D1E3"
+  IconBorderColor       "#4B699A"
+  IconForeground        "#4B699A"
+  IconManagerBackground "#4B699A"
+  IconManagerForeground "#C6D1E3"
+  MapWindowBackground   "#4B699A"        # BGcol for WSMwins
+  MapWindowForeground   "#C6D1E3"         # FGcol for WSMwins
+  MenuBackground        "#4B699A"
+  MenuForeground        "#C6D1E3"
+  MenuShadowColor       "#4B699A"        # default is black
+  MenuTitleBackground   "#C6D1E3"
+  MenuTitleForeground   "#4B699A"
+  TitleBackground       "#4B699A"
+  TitleForeground       "#C6D1E3" 
+}
+
+SaveColor                   # tell client about these
+{                       # settings to "smooth"
+     BorderColor
+     TitleBackground
+     TitleForeground
+}
+
+#---------------------------------------------------------
+# BORDER CONFIG
+#---------------------------------------------------------
+
+UseThreeDBorders
+
+ThreeDBorderWidth         7
+Borderwidth               2
+BorderShadowDepth         2
+
+#ClientBorderWidth          # Allow apps to set own BWidth
+
+NoBorder      # no borders around {win-list}
+{
+  "WorkSpaceManager"
+  "TWM Icon Manager"
+}
+
+#---------------------------------------------------------
+# STEVE LITT'S MODERNIZATTION 
+#---------------------------------------------------------
+ClickToFocus            # Prevent mouse movement changing focus
+RaiseOnClick            # Window rises when clicked
+RaiseOnClickButton 1    # When clicked with button 1, that is.
+UsePPosition "on"       # Help kbd instantiated windows get focus
+RandomPlacement "on"    # Help kbd instantiated windows get focus
+AutoFocusToTransients   # Help kbd instantiated windows get focus
+SaveWorkspaceFocus      # Obviously workspace focus should be retained
+WindowRing              # Enable Alt+Tab type window circulation
+WarpRingOnScreen        # Enable Alt+Tab type window circulation
+IgnoreCaseInMenuSelection # Make menus much easier via keyboard
+ShortAllWindowsMenus    # Don't show iconmgr and workspace mgr in lists
+
+
+#---------------------------------------------------------
+# WORKSPACE MANAGER CONFIG and
+# WORKSPACE COLORS AND NAMES                              
+# N = "Name"  |  MC = "ManagerColor"  |  MTC = "ManTextColor" 
+# BC = "BackgroundColor"  |  FC = "ForegroundColor"  |  RX = "RootXpm" 
+#---------------------------------------------------------
+
+ShowWorkSpaceManager            # activate/deactivate WSM
+
+ReallyMoveInWorkspaceManager            # Move windows from WSM?
+
+#UseThreeDWMap
+DontWarpCursorInWMap            # no move to indicated win
+NoShowOccupyAll             # don't show'em in WSM
+ReverseCurrentWorkspace     # reverse colors in curr WS?
+StartInMapState             # buttons or maps?
+
+WMgrHorizButtonIndent     0     # /dist. between buttons
+WMgrVertButtonIndent      0     # \when in button mode
+
+WorkSpaceManagerGeometry  "350x68+4+4" 5 5
+
+WorkSpaces 
+{
+#    N          MC        MTC       BC       FC    RX 
+    "1"    { "#4B699A" "#C6D1E3" "#364D70" "#C6D1E3"} # "xpm:bg/gnome-bg.xpm"}
+    "2"    { "#4B699A" "#C6D1E3" "#364D70" "#C6D1E3"} # "xpm:bg/gnome-bg.xpm"}
+    "3"    { "#4B699A" "#C6D1E3" "#364D70" "#C6D1E3"} # "xpm:bg/gnome-bg.xpm"}
+    "4"    { "#4B699A" "#C6D1E3" "#364D70" "#C6D1E3"} # "xpm:bg/gnome-bg.xpm"}
+    "5"    { "#4B699A" "#C6D1E3" "#364D70" "#C6D1E3"} # "xpm:bg/gnome-bg.xpm"}
+}
+
+Notitle
+{
+    "TWM Icon Manager"
+    "WorkSpaceManager"
+}
+
+
+#
+# ===========================================================
+# 
+# ===========================================================
+#
+NoDefaults 
+
+TitleButtonBorderWidth 0
+TitlePadding 5
+TitleButtonShadowDepth 0
+FramePadding 3
+TitleButtonShadowDepth 0
+
+LeftTitleButton "xpm:menu.xpm" {
+    Button1 : f.menu "windowmenu"
+}
+LeftTitleButton "xpm:max.xpm" {
+    Button1 : f.fullzoom
+}
+
+RightTitleButton "xpm:exit.xpm" {
+    Button1 : f.delete
+}
+
+RightTitleButton "xpm:iconify.xpm" {
+    Button1 : f.squeeze
+}
+
+RightTitleButton "xpm:min.xpm" {
+    Button1 : f.iconify
+}
+
+{
+    "WorkSpaceManager"
+    "TWM Icon Manager"
+}
+#
+# Define some useful functions for motion-based actions.
+#
+MoveDelta 3
+Function "move-or-lower" { f.move f.deltastop f.lower }
+Function "move-or-raise" { f.move f.deltastop f.raise }
+Function "move-or-iconify" { f.move f.deltastop f.iconify }
+
+DontMoveOff
+MoveOffResistance  20
+
+
+#---------------------------------------------------------
+# ICON CONFIG and
+# ICONS
+#---------------------------------------------------------
+
+ForceIcons              # use icons put below, not default
+IconifyByUnmapping          # no icon when iconified
+#NoRaiseOnDeiconify         # raise deiconified wins?
+#AutoRaiseIcons             # raise icons when under cursor
+
+#IconDirectory            ""        # dir. for bitmapI
+IconJustification         "center"  # where put image/title?
+MaxIconTitleWidth         120
+#IconBorderWidth          0             # frame around I?
+#UnknownIcon          ""        # bitmap to use for unknown?
+
+SchrinkIconTitles           # shrink icon titles a'la Motif
+
+# Where on the screen to put icons and how to place them.
+IconRegion                "140x684-0-0"   North East 130 90  { }
+IconRegion                "140x684-140-0" North East 130 90  { }
+#IconRegionAlignement     "bottom"
+#IconRegionJustification  "center"
+
+#---------------------------------------------------------
+# ICON MANAGER CONFIG
+#---------------------------------------------------------
+
+ShowIconManager             # activate/deactivate IM
+#NoIconManagers             # activate/deactivate IM
+#UseThreeDIconManagers
+SortIconManager             # sorts alphabetically
+#NoCaseSensitive            # sort with case?
+#NoIconTitle                # don't put title under icons
+IconManagerShadowDepth    2
+NoIconManagerFocus          # !focus the win under cursor in IM
+
+# Icon Manager Geometry:  Size:       Columns:
+IconManagerGeometry       "640x10+0-0" 5
+
+
+
+#
+# ===========================================================
+# KEYBINDS 
+# ===========================================================
+#
+
+Button3 =       : root      : f.menu "rightmenu"
+
+Button1 = m : window|icon   : f.function "move-or-lower"
+Button2 = m : window|icon   : f.iconify
+Button3 = m : window|icon   : f.function "move-or-raise"
+
+Button1 =   : title     : f.function "move-or-raise"
+Button2 =   : title     : f.raiselower
+Button3 =   : title     : f.raiselower
+
+Button1 =   : icon      : f.menu  "iconmenu"
+Button2 =   : icon      : f.function "move-or-iconify"
+Button3 =   : icon      : f.iconify
+
+Button1 =   : iconmgr   : f.iconify
+Button2 =   : iconmgr   : f.iconify
+
+Button1 =       : frame         : f.resize
+Button1 = m     : frame         : f.move
+Button2 =       : frame         : f.raiselower
+
+"F1"    = m     : all         : f.warpto "next"
+"F7"    =       : all           : f.warptoscreen "next"
+"F8"    =       : all           : f.warptoscreen "back"
+
+#
+# ===========================================================
+# MENU 
+# ===========================================================
+#
+
+menu "control" {
+    "Restart"       f.restart
+    "Exit"          f.quit
+}
+
+menu "windowmenu" {
+    "Iconify"       f.iconify
+    "Zoom"          f.fullzoom
+    "Move"          f.move
+    "Resize"        f.resize
+    ""              f.separator
+    "Occupy"        f.occupy
+    "Occupy All"    f.occupyall
+    ""              f.separator
+    "Raise Lower"   f.raiselower
+    "Refresh"       f.winrefresh
+    ""              f.separator
+    "Close"   f.delete
+    ""              f.separator
+    "Kill"     f.destroy
+
+}
+
+menu "iconmenu" {
+    "Iconify"       f.iconify
+    ""              f.separator
+    "OccupyWS"      f.occupy
+    "Occupy All"    f.occupyall
+    ""              f.separator
+    "Close"   f.delete
+    ""              f.separator
+    "Kill"     f.destroy
+}
+
+menu "rightmenu" {
+  "LightSpire"    f.title
+  "Apps"          f.exec "rofi -modi window,drun,run -padding 4 -show drun -sidebar-mode -color-window '#4B699A, #C6D1E3, #4B699A' -color-normal '#4B699A, #C6D1E3, #4B699A, #C6D1E3, #4B699A' -color-active '#4B699A, #C6D1E3, #4B699A, #C6D1E3, #4B699A' -color-urgent '#4B699A, #C6D1E3, #4B699A, #C6D1E3, #4B699A' &"
+  ""              f.separator
+  "File Manager"  f.exec "/usr/bin/pcmanfm &"
+  "Terminal"      f.exec "/usr/bin/alacritty &"
+  "WM"            f.menu  "control"
+}
