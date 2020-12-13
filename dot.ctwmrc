@@ -1,5 +1,6 @@
-PixmapDirectory        "/home/colbydray/.ctwmxpm/"
+PixmapDirectory        "/root/.ctmxpm/"
 
+NoDefaults 
 NoGrabServer
 RestartPreviousState
 MenuFont         "-misc-fixed-bold-r-normal-*-*-140-*-*-c-*-iso8859-*"
@@ -142,7 +143,7 @@ Notitle
 # 
 # ===========================================================
 #
-NoDefaults 
+
 
 TitleButtonBorderWidth 0
 TitlePadding 5
@@ -150,25 +151,24 @@ TitleButtonShadowDepth 0
 FramePadding 3
 TitleButtonShadowDepth 0
 
-LeftTitleButton "xpm:menu.xpm" {
-    Button1 : f.menu "windowmenu"
-}
 LeftTitleButton "xpm:max.xpm" {
     Button1 : f.fullzoom
+}
+LeftTitleButton "xpm:menu.xpm" {
+    Button1 : f.menu "windowmenu"
 }
 
 RightTitleButton "xpm:exit.xpm" {
     Button1 : f.delete
 }
 
-RightTitleButton "xpm:iconify.xpm" {
-    Button1 : f.squeeze
-}
-
 RightTitleButton "xpm:min.xpm" {
     Button1 : f.iconify
 }
 
+RightTitleButton "xpm:iconify.xpm" {
+    Button1 : f.squeeze
+}
 {
     "WorkSpaceManager"
     "TWM Icon Manager"
@@ -303,6 +303,6 @@ menu "rightmenu" {
   "Apps"          f.exec "rofi -modi window,drun,run -padding 4 -show drun -sidebar-mode -color-window '#4B699A, #C6D1E3, #4B699A' -color-normal '#4B699A, #C6D1E3, #4B699A, #C6D1E3, #4B699A' -color-active '#4B699A, #C6D1E3, #4B699A, #C6D1E3, #4B699A' -color-urgent '#4B699A, #C6D1E3, #4B699A, #C6D1E3, #4B699A' &"
   ""              f.separator
   "File Manager"  f.exec "/usr/bin/pcmanfm &"
-  "Terminal"      f.exec "/usr/bin/alacritty &"
+  "Terminal"      f.exec "/usr/bin/mate-terminal &"
   "WM"            f.menu  "control"
 }
