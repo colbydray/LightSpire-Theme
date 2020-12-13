@@ -1,3 +1,3 @@
-# ColbyOS LightSpire Theme
+# LightSpire Theme
 
 requires rofi
